@@ -9,7 +9,10 @@ export class MatricesProcessor extends MathProcessor {
     return det(this.parsedMatrix);
   }
 
-  public matrixMultiplication(matrix1: number[][], matrix2: number[][]) {
+  public matrixMultiplication(
+    matrix1: number[][],
+    matrix2: number[][]
+  ): number[][] {
     const size1 = size(matrix1);
     const size2 = size(matrix2);
 
@@ -20,6 +23,6 @@ export class MatricesProcessor extends MathProcessor {
     const parsedMatrix1 = matrix(matrix1);
     const parsedMatrix2 = matrix(matrix2);
 
-    return multiply(parsedMatrix1, parsedMatrix2);
+    return multiply(parsedMatrix1, parsedMatrix2).toArray() as number[][];
   }
 }
